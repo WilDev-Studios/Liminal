@@ -12,10 +12,10 @@ More details about creating more commands down below.
 Liminal was originally created as a project management application designed for absolutely no mouse-usage (strictly keyboard).
 
 **Please Note:**
-Liminal works for Windows only (hasn't been tested in Linux-based operating systems or MacOS). If you'd like to test or help in this regard, please contact WilDev Studios via Discord listed on our website and GitHub.
+Liminal works for Windows only (hasn't been tested in Linux-based operating systems or MacOS). If you'd like to test or help in this regard, please contact WilDev Studios via [Discord](https://www.discord.gg/4Ggybyy87d).
 
 ## Getting Started
-- Ensure you have any Python 3 version installed on your computer and in your PATH variables (as well as their package installer, PIP)
+- Ensure you have any [Python 3](https://www.python.org/downloads/) version installed on your computer and in your PATH variables (as well as their package installer, PIP)
 - Run the main.py file you downloaded. This will run the program like usual, but take you through steps for setup.
 - Make sure all of the projects you want to manage under Liminal are located in one main parent directory, and set that directory path as the projects directory in the application when it asks.
 - After initial setup, you should be able to use the commands listed under the "help" command to get started.
@@ -38,16 +38,16 @@ Basic commands include:
 - Launch:
   - Depending on system setup, this allows projects to be run through a simple command rather than executing complicated compiler/interpreter commands.
   - Requires further setup below.
-  - Currently only supports Python, but Java, C++, C, JavaScript, and C# are planned.
+  - Currently only supports [Python](https://www.python.org/), but [Java](https://www.java.com/en/), C++, C, JavaScript, and C# are planned.
 - Refresh:
   - Restarts the Liminal application. Useful for getting rid of cluttered text or applying changes to source code (if edited).
 - Set:
   - In case the projects directory needs to be reset or moved, this command allows you to change that configuration without editing manually in the config file.
 - VSC:
-  - For machines with Visual Studio Code, this command allows the folder selected to be opened in VSCode without hassle.
+  - For machines with [Visual Studio Code](https://code.visualstudio.com/), this command allows the folder selected to be opened in VSCode without hassle.
 
 **More commands may be added in the future** - 
-Plans for Visual Studio, Sublime Text, IntelliJ, etc. may be implemented.
+Plans for [Visual Studio](https://visualstudio.microsoft.com/), [Sublime Text](https://www.sublimetext.com/), [IntelliJ](https://www.jetbrains.com/idea/), etc. may be implemented.
 
 ### Launch Command
 In order for the "launch" command to be used, the projects in question should have a "launch.json" file present.
