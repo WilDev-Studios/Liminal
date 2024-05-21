@@ -2,6 +2,9 @@
 Liminal allows users to customize their experience with the application (exactly why it's open-source).
 Here's how to use Liminal to it's fullest potential.
 
+## Application
+I recommend, to keep Liminal simple to open, to create a shortcut to Liminal's main.bat file, and then move that shortcut into the Start menu on Windows, so you can press the `Win` key and type `Liminal` to open, instead of using Python to open it.
+
 ## Commands
 If the basic commands aren't enough for users, Liminal makes it very easy to make custom commands.
 
