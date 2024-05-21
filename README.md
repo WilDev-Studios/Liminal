@@ -33,8 +33,10 @@ Basic commands include:
   - Hassle-free exiting of the program.
 - Explore:
   - Opens the projects folder in Windows File Explorer.
+  ![Explore Example](https://github.com/WilDev-Studios/Liminal/blob/main/media/example-1.png)
 - Help:
   - Displays a list of all commands (even ones created by users).
+  ![Help Example](https://github.com/WilDev-Studios/Liminal/blob/main/media/example-2.png)
 - Launch:
   - Depending on system setup, this allows projects to be run through a simple command rather than executing complicated compiler/interpreter commands.
   - Requires further setup below.
