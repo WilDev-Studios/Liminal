@@ -32,7 +32,7 @@ Basic commands include:
 - Exit:
   - Hassle-free exiting of the program.
 - Explore:
-  - Opens the projects folder in Windows File Explorer.
+  - Opens the projects folder in Windows File Explorer (optionally a specific project folder).
   ![Explore Example](https://github.com/WilDev-Studios/Liminal/blob/main/media/example-1.png)
 - Help:
   - Displays a list of all commands (even ones created by users).
@@ -45,6 +45,8 @@ Basic commands include:
   - Restarts the Liminal application. Useful for getting rid of cluttered text or applying changes to source code (if edited).
 - Set:
   - In case the projects directory needs to be reset or moved, this command allows you to change that configuration without editing manually in the config file.
+- Terminal:
+  - Opens a new Command Prompt window and changes it's directory to the given project's folder
 - VSC:
   - For machines with [Visual Studio Code](https://code.visualstudio.com/), this command allows the folder selected to be opened in VSCode without hassle.
 
