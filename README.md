@@ -16,7 +16,7 @@ Liminal works for Windows only (hasn't been tested in Linux-based operating syst
 
 ## Getting Started
 - Ensure you have any [Python 3](https://www.python.org/downloads/) version installed on your computer and in your PATH variables (as well as their package installer, PIP)
-- Run the main.py file you downloaded. This will run the program like usual, but take you through steps for setup.
+- Run the main.py file you downloaded. This will run the program like usual, but take you through steps for setup. __Note:__ Liminal will automatically install the dependencies listed in dependencies.txt.
 - Make sure all of the projects you want to manage under Liminal are located in one main parent directory, and set that directory path as the projects directory in the application when it asks.
 - After initial setup, you should be able to use the commands listed under the "help" command to get started.
 
