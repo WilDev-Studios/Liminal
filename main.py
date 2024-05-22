@@ -45,6 +45,10 @@ if version != VERSION:
         with open(f"{DIRECTORY}/dependencies.txt", "wb+") as file:
             if file.read() != (content := requests.get(REPO_URL + "/dependencies.txt").content):
                 file.write(content)
+        
+        with open(f"{DIRECTORY}/version.txt", "wb+") as file:
+            if file.read() != (content := requests.get(REPO_URL + "/version.txt").content):
+                file.write(content)
 
         commandsRaw:list[dict[str]] = requests.get(API_URL + "/commands").json()
         
