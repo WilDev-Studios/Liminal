@@ -29,7 +29,7 @@ REPO_URL:str = "https://raw.githubusercontent.com/WilDev-Studios/Liminal/main"
 API_URL:str  = "https://api.github.com/repos/WilDev-Studios/Liminal/contents"
 
 response:requests.Response = requests.get(REPO_URL + "/version.txt")
-version:str = json.loads(response.text)["version"]
+version:str = response.text
 
 colorama.init()
 
