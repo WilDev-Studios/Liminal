@@ -1,5 +1,8 @@
 import os
 
+os.system("cls")
+
+VERSION:str = "1.0.0"
 DIRECTORY:str = os.path.dirname(__file__).replace('\\', '/')
 
 try:
@@ -8,19 +11,50 @@ try:
 
     import importlib
     import colorama
+    import requests
     import json
+    import sys
 except ImportError:
     with open(f"{DIRECTORY}/dependencies.txt") as file:
         dependencies:list[str] = file.read().split()
-    
+
     for dependency in dependencies:
         os.system(f"pip install {dependency}")
     
     os.system(f"python {DIRECTORY}/main.py")
 
+REPO_URL:str = "https://raw.githubusercontent.com/WilDev-Studios/Liminal/main"
+API_URL:str  = "https://api.github.com/repos/WilDev-Studios/Liminal/contents"
+
+response:requests.Response = requests.get(REPO_URL + "/config.json")
+version:str = json.loads(response.text)["version"]
+
 colorama.init()
 
-os.system("cls")
+if version != VERSION:
+    print(colored("A new update is available! Would you like to install it? [yes/no]", "light_cyan"))
+    answer:str = input(colored("Update? ", "light_grey"))
+
+    if answer.lower() == "yes":
+        with open(f"{DIRECTORY}/main.py", "wb+") as file:
+            if file.read() != (content := requests.get(REPO_URL + "/main.py").content):
+                file.write(content)
+
+        with open(f"{DIRECTORY}/dependencies.txt", "wb+") as file:
+            if file.read() != (content := requests.get(REPO_URL + "/dependencies.txt").content):
+                file.write(content)
+
+        commandsRaw:list[dict[str]] = requests.get(API_URL + "/commands").json()
+        
+        for commandInfo in commandsRaw:
+            filename:str = commandInfo["name"]
+
+            with open(f"{DIRECTORY}/commands/{filename}", "wb+") as file:
+                if file.read() != (content := requests.get(REPO_URL + "/commands/" + filename).content):
+                    file.write(content)
+        
+        os.system(f"python {DIRECTORY}/main.py")
+        sys.exit(0)
 
 TOP_LEFT:str        = '┌'
 TOP_RIGHT:str       = '┐'
@@ -65,7 +99,8 @@ for filename in os.listdir(f"{DIRECTORY}/commands"):
     commands[commandName] = commandModule.data
 
 config:dict[str] = {
-    "projects_directory": None
+    "projects_directory": None,
+    "version": VERSION
 }
 
 if os.path.exists(f"{DIRECTORY}/config.json"):
@@ -214,7 +249,7 @@ for index, item in projects.items():
     display_project(index, item)
 
 print(BOTTOM_LEFT, HORIZONTAL * longestIndex, HORIZONTAL_UP, HORIZONTAL * longestName, HORIZONTAL_UP, HORIZONTAL * longestType, HORIZONTAL_UP, HORIZONTAL * longestSize, BOTTOM_RIGHT)
-print(colored(f"{len(projects)} Items" if len(projects) > 1 else f"1 Item", "light_yellow"), ' | ', colored(render_size(totalSize), "light_blue"), '\n')
+print(colored(f"{len(projects)} Items" if len(projects) != 1 else f"1 Item", "light_yellow"), ' | ', colored(render_size(totalSize), "light_blue"), '\n')
 
 while True:
     try:
