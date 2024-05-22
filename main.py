@@ -2,8 +2,10 @@ import os
 
 os.system("cls")
 
-VERSION:str = "1.0.0"
 DIRECTORY:str = os.path.dirname(__file__).replace('\\', '/')
+
+with open(f"{DIRECTORY}/version.txt", "r") as file:
+    VERSION:str = file.read()
 
 try:
     from termcolor import colored
@@ -26,7 +28,7 @@ except ImportError:
 REPO_URL:str = "https://raw.githubusercontent.com/WilDev-Studios/Liminal/main"
 API_URL:str  = "https://api.github.com/repos/WilDev-Studios/Liminal/contents"
 
-response:requests.Response = requests.get(REPO_URL + "/config.json")
+response:requests.Response = requests.get(REPO_URL + "/version.txt")
 version:str = json.loads(response.text)["version"]
 
 colorama.init()
@@ -99,8 +101,7 @@ for filename in os.listdir(f"{DIRECTORY}/commands"):
     commands[commandName] = commandModule.data
 
 config:dict[str] = {
-    "projects_directory": None,
-    "version": VERSION
+    "projects_directory": None
 }
 
 if os.path.exists(f"{DIRECTORY}/config.json"):
