@@ -68,7 +68,7 @@ Internals of the "launch.json" file:
 - `language` is the programming language that the entrypoint file is written. This is used so that Liminal knows what command to execute the entrypoint with.
 
 **Project Folder Examples:**
-```
+```yaml
 # Entrypoint file is in the same directory as `launch.json`
 project_folder:
 - launch.json
@@ -82,7 +82,7 @@ project_folder:
 }
 ```
 <br><br>
-```
+```yaml
 # Entrypoint file is in a subdirectory from `launch.json`
 project_folder:
 - src:
